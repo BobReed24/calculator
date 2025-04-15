@@ -9,6 +9,13 @@
 <body>
   <div class="calculator">
     <input type="text" id="display" readonly />
+    <div class="toolbar">
+      Float:
+      <select id="precision">
+        <option value="-1">Auto</option>
+        ${[...Array(10).keys()].slice(1).map(i => `<option value="${i}">${i}</option>`).join('')}
+      </select>
+    </div>
     <div class="buttons" id="buttons"></div>
   </div>
   <script src="script.js"></script>

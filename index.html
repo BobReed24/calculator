@@ -3,154 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Advanced TI-84 Style Calculator</title>
-  <!-- Math.js library for advanced math operations -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.js"></script>
-  <!-- Plotly for graphing functionality -->
-  <script src="https://cdn.plot.ly/plotly-2.20.0.min.js"></script>
+  <title>Advanced Calculator</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>TI-84 Advanced</h1>
-    <nav>
-      <button class="tab-button" data-tab="calcTab">Calculator</button>
-      <button class="tab-button" data-tab="graphTab">Graphing</button>
-      <button class="tab-button" data-tab="matrixTab">Matrix</button>
-      <button class="tab-button" data-tab="historyTab">History</button>
-      <button id="themeToggle">Light Theme</button>
-    </nav>
-  </header>
-  <main>
-    <!-- Calculator Tab -->
-    <section id="calcTab" class="tab-content">
-      <div class="display-container">
-        <!-- Multi-line textarea for more complex expressions -->
-        <textarea id="display" readonly></textarea>
-      </div>
-      <div class="controls">
-        <div class="memory-controls">
-          <button data-action="M+">M+</button>
-          <button data-action="M-">M-</button>
-          <button data-action="MR">MR</button>
-          <button data-action="MC">MC</button>
-        </div>
-        <div class="precision">
-          <label for="precisionSelect">Float Precision:</label>
-          <select id="precisionSelect">
-            <option value="-1">Auto</option>
-            <option value="1">1</option>
-            <option value="2" selected>2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-          </select>
-        </div>
-      </div>
-      <div class="button-panel">
-        <!-- Basic numerical and operator buttons -->
-        <div class="grid">
-          <!-- The layout below includes many functions. You can adjust or add buttons as desired. -->
-          <button>7</button>
-          <button>8</button>
-          <button>9</button>
-          <button>/</button>
-          
-          <button>4</button>
-          <button>5</button>
-          <button>6</button>
-          <button>*</button>
-          
-          <button>1</button>
-          <button>2</button>
-          <button>3</button>
-          <button>-</button>
-          
-          <button>0</button>
-          <button>.</button>
-          <button>+</button>
-          <button>=</button>
-          
-          <button>sqrt</button>
-          <button>^</button>
-          <button>!</button>
-          <button>|x|</button>
-          
-          <button>sin</button>
-          <button>cos</button>
-          <button>tan</button>
-          <button>log</button>
-          
-          <button>ln</button>
-          <button>exp</button>
-          <button>(</button>
-          <button>)</button>
-          
-          <button>asin</button>
-          <button>acos</button>
-          <button>atan</button>
-          <button>round</button>
-          
-          <button>sinh</button>
-          <button>cosh</button>
-          <button>tanh</button>
-          <button>rand</button>
-          
-          <button>Ans</button>
-          <button>pi</button>
-          <button>e</button>
-          <button>C</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Graphing Tab -->
-    <section id="graphTab" class="tab-content hidden">
-      <h2>Graph Your Function</h2>
-      <div class="graph-controls">
-        <label>f(x): <input type="text" id="graphFunction" placeholder="e.g., sin(x)" /></label>
-        <label>x-min: <input type="number" id="xMin" value="-10" /></label>
-        <label>x-max: <input type="number" id="xMax" value="10" /></label>
-        <button id="plotButton">Plot</button>
-      </div>
-      <div id="graphArea"></div>
-    </section>
-
-    <!-- Matrix Tab -->
-    <section id="matrixTab" class="tab-content hidden">
-      <h2>Matrix Operations</h2>
-      <div class="matrix-controls">
-        <label>Matrix A (rows separated by line breaks, values by commas):<br>
-          <textarea id="matrixA" placeholder="1,2,3&#10;4,5,6"></textarea>
-        </label>
-        <label>Matrix B (for addition/subtraction/multiplication):<br>
-          <textarea id="matrixB" placeholder="7,8,9&#10;10,11,12"></textarea>
-        </label>
-        <label>Operation:
-          <select id="matrixOp">
-            <option value="add">A + B</option>
-            <option value="subtract">A - B</option>
-            <option value="multiply">A * B</option>
-            <option value="determinantA">Determinant of A</option>
-            <option value="inverseA">Inverse of A</option>
-            <option value="transposeA">Transpose of A</option>
-          </select>
-        </label>
-        <button id="matrixCalc">Calculate</button>
-      </div>
-      <div id="matrixResult"></div>
-    </section>
-
-    <!-- History Tab -->
-    <section id="historyTab" class="tab-content hidden">
-      <h2>Calculation History</h2>
-      <ul id="historyList"></ul>
-      <button id="clearHistory">Clear History</button>
-    </section>
+  <main class="calculator">
+    <input type="text" id="display" placeholder="0" readonly />
+    <div class="buttons">
+      <button>7</button><button>8</button><button>9</button><button>/</button>
+      <button>4</button><button>5</button><button>6</button><button>*</button>
+      <button>1</button><button>2</button><button>3</button><button>-</button>
+      <button>0</button><button>.</button><button>=</button><button>+</button>
+      <button>sin</button><button>cos</button><button>tan</button><button>log</button>
+      <button>(</button><button>)</button><button>sqrt</button><button>^</button>
+      <button>AC</button><button>DEL</button>
+    </div>
   </main>
   <script src="script.js"></script>
 </body>
